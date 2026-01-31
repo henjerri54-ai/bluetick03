@@ -1,12 +1,15 @@
 import '@/app/globals.css';
-import Favicon from '@/assets/images/favicon.png';
-import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 
-export const metadata: Metadata = {
-    title: 'Meta Verified – Rewards for you',
-    icons: {
-        icon: Favicon.src
-    }
+export const generateMetadata = async () => {
+    const h = await headers();
+    const host = h.get('x-forwarded-host') || h.get('host');
+    const proto = h.get('x-forwarded-proto') || 'https';
+    const base = `${proto}://${host}`;
+
+    return {
+        metadataBase: new URL(base)
+    };
 };
 
 const RootLayout = ({
